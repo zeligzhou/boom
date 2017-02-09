@@ -5,9 +5,13 @@
     <title>Boom</title>
 </head>
 <body>
-    <div id="app">
+  <div id="app">
+    <h1 > {{title}}</h1>
+    <div>
         {{ message }}
     </div>
+
+  </div>
 </body>
 <script src="js/vue.js"></script>
 <script>
@@ -15,7 +19,8 @@
     new Vue({
       el: '#app',
       data: {
-        message:"hello"
+        title:"Vue Demo",
+        message:"Vue常用功能示例"
       }
     })
 </script>

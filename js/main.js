@@ -27,7 +27,7 @@ Vue.component('section3',{
   data:function(){
     return {
       title:'示例3：绑定事件',
-      message:'VUE自带的绑定'
+      message:'VUE自带的绑定，点击事件'
     }
   }
 });
@@ -47,7 +47,7 @@ Vue.component('section4',{
   data:function(){
     return {
       title:'示例4：引用js插件',
-      message:'引用jquery及其插件'
+      message:'引用jquery及其插件，拖拽方块'
     }
   }
 });
@@ -58,6 +58,17 @@ Vue.component('card-item3',{
 Vue.component('card-item4',{
   template:'<li>{{title}}</li>',
   props:['title']
+});
+
+Vue.component('section5',{
+  template:'<section><h2>{{title}}</h2><div>{{message}}</div><div>当前天气：{{weather}}</div></section>',
+  data:function(){
+    return {
+      title:'示例5：AJAX获取数据',
+      message:'异步数据的展示'
+    }
+  },
+  props:['weather']
 });
 var app =  new Vue({
     el: '#app',
@@ -96,13 +107,30 @@ var app =  new Vue({
         {text:'2card10'},
         {text:'2card11'},
         {text:'2card12'}
-      ]
+      ],
+      ajaxData:'000'
+    },
+    beforeCreate:function(){
+      console.log("实例创建前，ajaxData为："+this.ajaxData);
+      this.ajaxData='1'
     },
     created:function(){
-      console.log("文档生成后，目标li的数量为："+$("#list1 li").length);
+      console.log("实例创建后，ajaxData为："+this.ajaxData);
+      var self = this;
+      $.ajax({
+       url: "http://api.k780.com:88/?app=weather.today&weaid=1&appkey=10003&sign=b59bc3ef6191eb9f747dd4e83c99f2a4&format=json&jsoncallback=?",
+        dataType: "jsonp",
+          type:"Post",
+         jsonpCallback: "jsonpCallback",
+        success: function (data) {
+            self.ajaxData = data.result.temperature;
+            console.log("请求完成后，ajaxData为："+self.ajaxData);
+          }
+        });
+      console.log("实例创建后，目标li的数量为："+$("#list1 li").length);
     },
     mounted:function(){
-      console.log("组件生成后，目标li的数量为："+$("#list1 li").length);
+      console.log("组件挂载后，目标li的数量为："+$("#list1 li").length);
       $("#list1, #list2").dragsort({ dragSelector: "li", dragBetween: true, dragEnd: saveOrder  });
     
         function saveOrder() {

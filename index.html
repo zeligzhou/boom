@@ -36,9 +36,31 @@
       ></li>
     </ul>
     </div>
+    <hr>
+      <section4></section4>
+      <div class="box">
+      <ul class="card_frame" id="list1">
+      <li
+        is="card-item3"
+        v-for="(card, index) in varCards1"
+        v-bind:title="card.text"
+        
+      ></li>
+    </ul>
+    <ul class="card_frame" id="list2">
+      <li
+        is="card-item4"
+        v-for="(card, index) in varCards2"
+        v-bind:title="card.text"
+        
+      ></li>
+    </ul>
+    </div>
   </div>
 </body>
 <script src="js/vue.js"></script>
+<script src="js/jquery-1.12.4.min.js"></script>
+<script src="js/jquery.dragsort-0.5.1.js"></script>
 <script src="js/main.js"></script>
 
 </html>

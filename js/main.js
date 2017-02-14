@@ -70,6 +70,16 @@ Vue.component('section5',{
   },
   props:['weather']
 });
+
+Vue.component('section6',{
+  template:'<section><h2>{{title}}</h2><div>{{message}}</div></section>',
+  data:function(){
+    return {
+      title:'示例6：组件化以及生命周期',
+      message:''
+    }
+  }
+});
 var app =  new Vue({
     el: '#app',
     data: {

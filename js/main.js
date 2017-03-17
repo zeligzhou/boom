@@ -99,8 +99,8 @@ var app =  new Vue({
       title:"Vue Demo",
       message:"Vue常用功能示例",
       cardsInBox:{
-        "第一个父节点":["子节点1","子节点2"],
-        "第二个父节点":["子节点3","子节点4"]
+        "第一个父节点":objToStr([{"name":"子节点1"},{"name":"子节点2"}]),
+        "第二个父节点":objToStr([{"name":"子节点3"},{"name":"子节点4"}])
       },
       cards:[
         {text:'card1'},
@@ -165,3 +165,27 @@ var app =  new Vue({
         };
     }
   });
+
+/*json对象转换为字符串*/
+        function objToStr(o) {
+            var r = [];
+            if (typeof o == "string") {
+                return "\"" + o.replace(/([\'\"\\])/g, "\\$1").replace(/(\n)/g, "\\n").replace(/(\r)/g, "\\r").replace(/(\t)/g, "\\t") + "\"";
+            } else if (typeof o == "undefined") {
+                return "";
+            } else if (typeof o == "object") {
+                if (o === null) {
+                    return "null";
+                } else if (!o.sort) {
+                    for (var i in o)
+                        r.push("\"" + i + "\":" + objToStr(o[i]));
+                    r = "{" + r.join() + "}";
+                } else {
+                    for (var i = 0; i < o.length; i++)
+                        r.push(objToStr(o[i]));
+                    r = "[" + r.join() + "]";
+                }
+                return r;
+            }
+            return o.toString();
+        }

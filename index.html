@@ -65,7 +65,7 @@
         is="parent" v-for="(value, key) in cardsInBox"  v-bind:parentobj="key":children="value"></div>
       <script  type="text/x-template" id="child">
         
-          <ul class="children" v-bind:dataC="childcon" ></ul>
+          <ul v-bind:data-c="childcon" ></ul>
           
       </script>
       <!-- <script  type="text/x-template" id="parent">

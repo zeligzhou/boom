@@ -61,6 +61,23 @@
       <section5 v-bind:weather="ajaxData"></section5>
       <hr>
       <section6></section6>
+      <div
+        is="parent" v-for="(value, key) in cardsInBox"  v-bind:parente="key"></div>
+      <script  type="text/x-template" id="child">
+        <ul>
+          <li>子组件1</li>
+          <li>子组件2</li>
+          </ul>
+      </script>
+      <!-- <script  type="text/x-template" id="parent">
+        <div>
+
+          <p>{{parentName}}</p>
+          <child></child>
+          
+        </div>
+      </script>
+      -->
   </div>
 </body>
 <script src="js/vue.js"></script>

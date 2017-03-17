@@ -75,16 +75,32 @@ Vue.component('section6',{
   template:'<section><h2>{{title}}</h2><div>{{message}}</div></section>',
   data:function(){
     return {
-      title:'示例6：组件化以及生命周期',
+      title:'示例6：父子组件嵌套',
       message:''
     }
   }
+});
+
+
+var childComponent = Vue.extend({
+        template: '#child'
+    });
+Vue.component("parent",{
+    template: '<div><p>{{parente}}</p><child></child></div>',
+    components: {
+        'child': childComponent
+    },
+    props:['parente']
 });
 var app =  new Vue({
     el: '#app',
     data: {
       title:"Vue Demo",
       message:"Vue常用功能示例",
+      cardsInBox:{
+        "第一个父节点":["子节点1","子节点2"],
+        "第二个父节点":["子节点3","子节点4"]
+      },
       cards:[
         {text:'card1'},
         {text:'card2'},

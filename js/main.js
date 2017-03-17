@@ -83,14 +83,15 @@ Vue.component('section6',{
 
 
 var childComponent = Vue.extend({
-        template: '#child'
+        template: '#child',
+        props:["childcon"]
     });
 Vue.component("parent",{
-    template: '<div><p>{{parente}}</p><child></child></div>',
+    template: '<div><p>{{parentobj}}</p><child v-bind:childcon="children"></child></div>',
     components: {
         'child': childComponent
     },
-    props:['parente']
+    props:['parentobj','children']
 });
 var app =  new Vue({
     el: '#app',

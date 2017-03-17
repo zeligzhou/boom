@@ -62,12 +62,11 @@
       <hr>
       <section6></section6>
       <div
-        is="parent" v-for="(value, key) in cardsInBox"  v-bind:parente="key"></div>
+        is="parent" v-for="(value, key) in cardsInBox"  v-bind:parentobj="key":children="value"></div>
       <script  type="text/x-template" id="child">
-        <ul>
-          <li>子组件1</li>
-          <li>子组件2</li>
-          </ul>
+        
+          <ul class="children" v-bind:dataC="childcon" ></ul>
+          
       </script>
       <!-- <script  type="text/x-template" id="parent">
         <div>

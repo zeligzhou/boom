@@ -1,0 +1,71 @@
+<template>
+    <div>
+        <swiper :options="swiperOption" class="swiper-box">
+            <swiper-slide class="swiper-slide">
+              <favlist></favlist>
+            </swiper-slide>
+            <swiper-slide class="swiper-slide">
+              <find></find>
+            </swiper-slide>
+            <swiper-slide class="swiper-slide">
+              <profile></profile>
+            </swiper-slide>
+            <div class="swiper-pagination bottom-nav" slot="pagination"></div>
+        </swiper>
+    </div>
+</template>
+
+<script>
+    import { swiper, swiperSlide } from 'vue-awesome-swiper'
+    import Favlist from './Favlist'
+    import Find from './Find'
+    import Profile from './Profile'
+
+    const TAB_NAME = ['fa-star','fa-magnet','fa-user']
+
+    export default {
+        components:{
+            Favlist,
+            Find,
+            Profile,
+            swiper,
+            swiperSlide
+        },
+        data () {
+            return {
+                swiperOption: {
+                  pagination: '.swiper-pagination',
+                  paginationClickable: true,
+                  paginationBulletRender(swiper, index, className) {
+                    return `<div class="bottom-grid ${className}"><i class="fa ${TAB_NAME[index]}" aria-hidden="true"></i></div>`
+                  }
+                }
+            }
+        },
+        methods:{
+            transMenu(e){
+                document.querySelector(".bottom-grid.cur").setAttribute("class","bottom-grid");
+                (e.target).parentNode.setAttribute("class","bottom-grid cur");
+            }
+        }
+    }
+</script>
+
+<style>
+    .swiper-box{ width: 100%; padding-bottom: 6rem; box-sizing:border-box; }
+    .bottom-nav{ position:fixed; width: 100%; height: 6rem; border-top:1px solid #eee; background: #fff ; bottom: 0!important; }
+    .bottom-grid{ width: 33.33%;height: 6rem; float: left;box-sizing:border-box; border-right:1px solid #eee; line-height: 6rem; text-align: center; font-size: 3rem ;color:#ddd;}
+    .swiper-pagination-bullet-active.bottom-grid{color:#6DC7D1; 
+    -webkit-animation: 1s linear 0s move_eye;
+     -moz-animation: 1s linear 0s move_eye;
+       -o-animation: 1s linear 0s move_eye;
+          animation: 1s linear 0s move_eye;}
+    .bottom-grid:last-child{border-right: none}
+    .swiper-pagination-bullet{border-radius: 0; opacity: 1; background: #fff}
+    .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet{margin: 0;}
+    .swiper-pagination-bullet-active {opacity: 1;background: #fff;}
+    @-webkit-keyframes move_eye { from { color:#ddd;} to { color:#6DC7D1;  }  }
+    @-moz-keyframes move_eye { from { color:#ddd;} to { color:#6DC7D1;  }  }
+    @-o-keyframes move_eye { from { color:#ddd;} to { color:#6DC7D1;  }  }
+    @keyframes move_eye { from { color:#ddd;} to { color:#6DC7D1;  }  }
+</style>

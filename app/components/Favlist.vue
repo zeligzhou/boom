@@ -1,7 +1,31 @@
 <template>
-    <div class="list">
-        <i class="fa fa-quote-left fa-3x fa-pull-left fa-border" aria-hidden="true"></i>
-        {{msg}}
+    <div class="fav-list">
+        <div class="fav-album">
+            <div class="fav-album-grid">
+                <div class="fav-album-wrap">
+                    <img src="../images/album.jpg" alt="">
+                    <div class="fav-album-info">
+                        <i class="fa fa-headphones" aria-hidden="true"></i><span>2017</span>
+                    </div>
+                </div>
+            </div>
+            <div class="fav-album-grid">
+                <div class="fav-album-wrap">
+                    <img src="../images/album.jpg" alt="">
+                    <div class="fav-album-info">
+                        <i class="fa fa-headphones" aria-hidden="true"></i><span>2017</span>
+                    </div>
+                </div>
+            </div>
+            <div class="fav-album-grid">
+                <div class="fav-album-wrap">
+                    <img src="../images/album.jpg" alt="">
+                    <div class="fav-album-info">
+                        <i class="fa fa-headphones" aria-hidden="true"></i><span>2017</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </template>
 
@@ -15,6 +39,3 @@
     }
 </script>
 
-<style>
-    .list{font-size:1.8rem}
-</style>

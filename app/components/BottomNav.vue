@@ -55,7 +55,7 @@
     .swiper-box{ width: 100%; padding-bottom: 6rem; box-sizing:border-box; }
     .bottom-nav{ position:fixed; width: 100%; height: 6rem; border-top:1px solid #eee; background: #fff ; bottom: 0!important; }
     .bottom-grid{ width: 33.33%;height: 6rem; float: left;box-sizing:border-box; border-right:1px solid #eee; line-height: 6rem; text-align: center; font-size: 3rem ;color:#ddd;}
-    .swiper-pagination-bullet-active.bottom-grid{color:#6DC7D1; 
+    .swiper-pagination-bullet-active.bottom-grid{color:#84cdc2; 
     -webkit-animation: 1s linear 0s move_eye;
      -moz-animation: 1s linear 0s move_eye;
        -o-animation: 1s linear 0s move_eye;
@@ -64,8 +64,8 @@
     .swiper-pagination-bullet{border-radius: 0; opacity: 1; background: #fff}
     .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet{margin: 0;}
     .swiper-pagination-bullet-active {opacity: 1;background: #fff;}
-    @-webkit-keyframes move_eye { from { color:#ddd;} to { color:#6DC7D1;  }  }
-    @-moz-keyframes move_eye { from { color:#ddd;} to { color:#6DC7D1;  }  }
-    @-o-keyframes move_eye { from { color:#ddd;} to { color:#6DC7D1;  }  }
-    @keyframes move_eye { from { color:#ddd;} to { color:#6DC7D1;  }  }
+    @-webkit-keyframes move_eye { from { color:#ddd;} to { color:#84cdc2;  }  }
+    @-moz-keyframes move_eye { from { color:#ddd;} to { color:#84cdc2;  }  }
+    @-o-keyframes move_eye { from { color:#ddd;} to { color:#84cdc2;  }  }
+    @keyframes move_eye { from { color:#ddd;} to { color:#84cdc2;  }  }
 </style>

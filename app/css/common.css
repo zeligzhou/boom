@@ -5,9 +5,9 @@ html {
 }
 
 body {
-    line-height: 1.6;
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     color:#333;
+    /* background: url(../images/bg18.png); */
 }
 
 * {
@@ -26,3 +26,13 @@ a {
 .hide{
     display: none!important
 }
+
+.fav-album{padding: .6rem .4rem}
+.fav-album-grid{float: left;width: 33.33%; box-sizing:border-box; padding: .4rem}
+.fav-album-wrap{position: relative;}
+.fav-album-grid img{ width: 100%; }
+.fav-album-info{ position: absolute; width: 100%; height: 2.4rem; background-color: rgba(0,0,0,0.4);left: 0;bottom: 0; line-height: 2.4rem; color: #eee; font-size: 1.4rem}
+.fav-album-info i{padding: 0 .4rem}
+.fav-find{ padding: 2rem; text-align: center;font-size: 1.8rem; color: #84cdc2}
+.fav-find-icon{ font-size: 5rem; padding-bottom: 1rem}
+.fav-find-text{color: #999}

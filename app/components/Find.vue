@@ -1,7 +1,7 @@
 <template>
-    <div class="list">
-        <i class="fa fa-quote-left fa-3x fa-pull-left fa-border" aria-hidden="true"></i>
-        {{msg}}
+    <div class="fav-find">
+        <div class="fav-find-icon"><i class="fa fa-heartbeat" aria-hidden="true"></i></div>
+        <div class="fav-find-text">寻找您的所爱 •••</div>
     </div>
 </template>
 
@@ -15,6 +15,3 @@
     }
 </script>
 
-<style>
-    .list{font-size:1.8rem}
-</style>

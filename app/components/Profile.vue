@@ -1,7 +1,7 @@
 <template>
-    <div class="list">
-        <i class="fa fa-quote-left fa-3x fa-pull-left fa-border" aria-hidden="true"></i>
-        {{msg}}
+    <div class="profile">
+        <div class="profile-name">Zelig</div>
+        <div class="profile-ava"><img src="../images/album.jpg" alt=""></div>
     </div>
 </template>
 
@@ -16,5 +16,7 @@
 </script>
 
 <style>
-    .list{font-size:1.8rem}
+    .profile-name{ height: 4rem; line-height: 4rem; font-size: 1.8rem; text-align: center; margin-top: 2rem;}
+    .profile-ava{ margin-top: 2rem; text-align: center;}
+    .profile-ava img{ width: 10rem; height: 10rem; border-radius: 5rem }
 </style>

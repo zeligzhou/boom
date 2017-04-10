@@ -7,6 +7,9 @@ html {
 body {
     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
     color:#333;
+    width: 100%;
+    max-width: 768px;
+    margin:0 auto;
     /* background: url(../images/bg18.png); */
 }
 
@@ -27,12 +30,33 @@ a {
     display: none!important
 }
 
-.fav-album{padding: .6rem .4rem}
+.blue{ color: #64B5F6 }
+.brown{ color: #A1887F }
+.red{ color: #E57373 }
+.purple{ color: #9575CD }
+.green{ color: #81C784 }
+.pink{ color: #F48FB1 }
+.yellow{ color: #FFD54F }
+.orange{ color: #FF8A65 }
+.cyan{color: #26C6DA}
+
+.bg-blue{ background-color: #64B5F6 }
+.bg-brown{ background-color: #A1887F }
+.bg-red{ background-color: #E57373 }
+.bg-purple{ background-color: #9575CD }
+.bg-green{ background-color: #81C784 }
+.bg-pink{ background-color: #F48FB1 }
+.bg-yellow{ background-color: #FFD54F }
+.bg-orange{ background-color: #FF8A65 }
+.bg-cyan{background-color: #26C6DA}
+
+.fav-album{padding: .6rem .4rem; clear: both; overflow: hidden;}
 .fav-album-grid{float: left;width: 33.33%; box-sizing:border-box; padding: .4rem}
 .fav-album-wrap{position: relative;}
 .fav-album-grid img{ width: 100%; }
 .fav-album-info{ position: absolute; width: 100%; height: 2.4rem; background-color: rgba(0,0,0,0.4);left: 0;bottom: 0; line-height: 2.4rem; color: #eee; font-size: 1.4rem}
 .fav-album-info i{padding: 0 .4rem}
-.fav-find{ padding: 2rem; text-align: center;font-size: 1.8rem; color: #84cdc2}
+.fav-find{ padding: 2rem; text-align: center;font-size: 1.8rem; color: #84cdc2; margin-top: 2rem;}
 .fav-find-icon{ font-size: 5rem; padding-bottom: 1rem}
 .fav-find-text{color: #999}
+.fav-title{ font-size: 1.6rem; margin-left: .8rem;margin-top: 1rem; border-left: .6rem solid #84cdc2; padding-left: .4rem; height: 2rem ; line-height: 2rem;}

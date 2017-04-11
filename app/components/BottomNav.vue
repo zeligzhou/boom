@@ -12,6 +12,8 @@
             </swiper-slide>
             <div class="swiper-pagination bottom-nav" slot="pagination"></div>
         </swiper>
+        <div class="player-mini active" v-on:click="transToPlayer"><i class="fa fa-music" aria-hidden="true"></i></div>
+        <player></player>
     </div>
 </template>
 
@@ -20,6 +22,7 @@
     import Favlist from './Favlist'
     import Find from './Find'
     import Profile from './Profile'
+    import Player from './Player'
 
     const TAB_NAME = ['fa-star','fa-magnet','fa-user']
 
@@ -28,6 +31,7 @@
             Favlist,
             Find,
             Profile,
+            Player,
             swiper,
             swiperSlide
         },
@@ -43,9 +47,10 @@
             }
         },
         methods:{
-            transMenu(e){
-                document.querySelector(".bottom-grid.cur").setAttribute("class","bottom-grid");
-                (e.target).parentNode.setAttribute("class","bottom-grid cur");
+            transToPlayer(e){
+                document.querySelector(".player").setAttribute("class","player");
+                document.querySelector(".player-mini").setAttribute("class","player-mini hide");
+                document.querySelector(".swiper-box").setAttribute("class","swiper-box hide");
             }
         }
     }

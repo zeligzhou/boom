@@ -1,4 +1,4 @@
-## Vue-demo
+## music-webapp-demo
 #### todo
-- 单曲播放页
-- 播放列表
+- 通过api获取歌曲
+- vuex状态管理

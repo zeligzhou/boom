@@ -57,7 +57,7 @@
 </script>
 
 <style>
-    .swiper-box{ width: 100%; padding-bottom: 6rem; box-sizing:border-box; }
+    .swiper-box{ width: 100%; padding-bottom: 6rem; box-sizing:border-box; min-height: 100vh}
     .bottom-nav{ position:fixed; width: 100%;max-width: 768px; height: 6rem; border-top:1px solid #eee; background: #fff ; bottom: 0!important; left: auto!important}
     .bottom-grid{ width: 33.33%;height: 6rem; float: left;box-sizing:border-box; border-right:1px solid #eee; line-height: 6rem; text-align: center; font-size: 3rem ;color:#ddd;}
     .swiper-pagination-bullet-active.bottom-grid{color:#84cdc2; 

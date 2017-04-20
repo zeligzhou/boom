@@ -14,6 +14,7 @@
         </swiper>
         <div class="player-mini active" v-on:click="transToPlayer"><i class="fa fa-music" aria-hidden="true"></i></div>
         <player></player>
+        <chat></chat>
     </div>
 </template>
 
@@ -23,6 +24,7 @@
     import Find from './Find'
     import Profile from './Profile'
     import Player from './Player'
+    import Chat from './Chat'
 
     const TAB_NAME = ['fa-star','fa-magnet','fa-user']
 
@@ -32,6 +34,7 @@
             Find,
             Profile,
             Player,
+            Chat,
             swiper,
             swiperSlide
         },
@@ -42,7 +45,10 @@
                   paginationClickable: true,
                   paginationBulletRender(swiper, index, className) {
                     return `<div class="bottom-grid ${className}"><i class="fa ${TAB_NAME[index]}" aria-hidden="true"></i></div>`
-                  }
+                  },
+                  onSlideChangeStart(swiper){
+                      document.body.scrollTop = 0;
+                    }
                 }
             }
         },
@@ -57,7 +63,8 @@
 </script>
 
 <style>
-    .swiper-box{ width: 100%; padding-bottom: 6rem; box-sizing:border-box; min-height: 100vh}
+    .swiper-box{ width: 100%; padding-bottom: 6rem; box-sizing:border-box; height: 100vh; overflow: hidden;}
+    .swiper-slide{overflow-y: auto;}
     .bottom-nav{ position:fixed; width: 100%;max-width: 768px; height: 6rem; border-top:1px solid #eee; background: #fff ; bottom: 0!important; left: auto!important}
     .bottom-grid{ width: 33.33%;height: 6rem; float: left;box-sizing:border-box; border-right:1px solid #eee; line-height: 6rem; text-align: center; font-size: 3rem ;color:#ddd;}
     .swiper-pagination-bullet-active.bottom-grid{color:#84cdc2; 
@@ -69,6 +76,7 @@
     .swiper-pagination-bullet{border-radius: 0; opacity: 1; background: #fff}
     .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet{margin: 0;}
     .swiper-pagination-bullet-active {opacity: 1;background: #fff;}
+    .bottom-grid.swiper-pagination-bullet:active{background-color: #fff!important;}
     @-webkit-keyframes move_eye { from { color:#ddd;} to { color:#84cdc2;  }  }
     @-moz-keyframes move_eye { from { color:#ddd;} to { color:#84cdc2;  }  }
     @-o-keyframes move_eye { from { color:#ddd;} to { color:#84cdc2;  }  }

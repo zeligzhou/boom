@@ -6,6 +6,21 @@ var opn = require('opn')
 
 // 创建一个express实例
 var app = express()
+var server = require('http').createServer(app);
+var io = require('socket.io')(server);
+io.on('connection', function(client){
+  client.on('init', function(){
+    console.log("---------------init in io")
+  });
+  client.on('disconnect', function(){
+    console.log("---------------disconnect in io")
+  });
+  client.on('sendMsg', function(data){
+    console.log("---------------receive msg in io : "+data);
+    io.emit('backMsg', "back to Zelig");
+  });
+  
+});
 
 // 调用webpack并把配置传递过去
 var compiler = webpack(config)
@@ -36,7 +51,7 @@ app.use(devMiddleware)
 app.use(hotMiddleware)
 
 // 监听 8888端口，开启服务器
-app.listen(8888, function (err) {
+server.listen(8888, function (err) {
     if (err) {
         console.log(err)
         return

@@ -34,6 +34,7 @@
   "dependencies": {
     "css-loader": "^0.28.0",
     "opn": "^4.0.2",
+    "socket.io": "^1.7.3",
     "vue": "^2.2.6",
     "vue-awesome-swiper": "^2.4.0",
     "vue-html-loader": "^1.2.4",

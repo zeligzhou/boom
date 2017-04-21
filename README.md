@@ -1,4 +1,5 @@
 ## music-webapp-demo
 #### todo
+- chatrobot
 - 通过api获取歌曲
-- vuex状态管理
+- vuex and router

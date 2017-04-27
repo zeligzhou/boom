@@ -1,6 +1,6 @@
 <template>
     
-    <div class="fav-list">
+    <div class="fav-list content-wrap">
         <div class="fav-wrap">
             <div class="fav-title">
                 最新唱片

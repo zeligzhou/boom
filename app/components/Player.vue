@@ -1,5 +1,5 @@
 <template>
-    <div class="player hide">
+    <div class="player">
         <div class="player-info">
             <img src="../images/album.jpg" v-on:load="calRGB" alt="">
             <div class="player-close" v-on:click="hidePlayer"><i class="fa fa-compress" aria-hidden="true"></i></div>
@@ -61,6 +61,11 @@
                 msg: 'Hello Zelig!'
             }
         },
+        mounted(){
+            console.log("in player");
+            document.querySelector(".bottom-nav").setAttribute("class","bottom-nav hide");
+            document.querySelector(".player-mini").setAttribute("class","player-mini hide");
+        },
         methods:{
             calRGB(e){
                 var img = e.target;
@@ -73,13 +78,14 @@
                     document.querySelector(".player").style.background = (payload.dominant).replace(/rgb/,'rgba').replace(/\)/,',0.8)');
                     //document.querySelector(".player-bar").style.background = (payload.secondary).replace(/rgb/,'rgba').replace(/\)/,',1)');
                     document.querySelector(".player-album").style.height = window.outerHeight- window.outerWidth - 160 + "px";
+                    
                   }
                 }); 
             },
             hidePlayer(e){
-                document.querySelector(".player").setAttribute("class","player hide");
-                document.querySelector(".player-mini").setAttribute("class","player-mini active");
-                document.querySelector(".swiper-box").setAttribute("class","swiper-box");
+                this.$parent.$emit("closePlayer");
+                document.querySelector(".bottom-nav").setAttribute("class","bottom-nav");
+                document.querySelector(".player-mini").setAttribute("class","player-mini");
             },
             showList(){
                 document.querySelector(".player-album").setAttribute("class","player-album cover");

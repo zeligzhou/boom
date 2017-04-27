@@ -1,5 +1,5 @@
 <template>
-    <div class="profile">
+    <div class="profile content-wrap">
         <div class="profile-name">Zelig</div>
         <div class="profile-ava"><img src="../images/avatar-1.jpg" alt=""></div>
         <div class="setting">
@@ -18,9 +18,7 @@
         },
         methods:{
             toChat(e){
-                document.querySelector(".chat").setAttribute("class","chat");
-                document.querySelector(".player-mini").setAttribute("class","player-mini hide");
-                document.querySelector(".swiper-box").setAttribute("class","swiper-box hide");
+                this.$parent.$emit("openChat");
             }
         }
     }

@@ -1,5 +1,5 @@
 <template>
-    <div class="chat hide">
+    <div class="chat">
         <div class="chat-close" v-on:click="hidePlayer"><i class="fa fa-compress" aria-hidden="true"></i></div>
         <div class="chat-wrap">
             <ul>
@@ -28,14 +28,17 @@
                 msg: 'Hello Zelig!'
             }
         },
+        mounted(){
+            console.log("in chat");
+            document.querySelector(".bottom-nav").setAttribute("class","bottom-nav hide");
+        },
         methods:{
             sendMsg(e){
                 t.sendMsg(document.querySelector("#msg"));
             },
             hidePlayer(e){
-                document.querySelector(".chat").setAttribute("class","chat hide");
-                document.querySelector(".player-mini").setAttribute("class","player-mini active");
-                document.querySelector(".swiper-box").setAttribute("class","swiper-box");
+                this.$parent.$emit("closeChat");
+                document.querySelector(".bottom-nav").setAttribute("class","bottom-nav");
             }
         }
     }

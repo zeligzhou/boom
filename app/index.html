@@ -6,9 +6,19 @@
         <title>首页</title>
     </head>
     <body>
-        <!-- vue的组件以自定义标签的形式使用 -->
         <div id="app">
-            <bottom-nav></bottom-nav>
+            <div class="bottom-nav">
+                <router-link to="/home" tag="div" class="bottom-grid"><i class="fa fa-star" aria-hidden="true"></i></router-link>
+                <router-link to="/find" tag="div" class="bottom-grid"><i class="fa fa-magnet" aria-hidden="true"></i></router-link>
+                <router-link to="/profile" tag="div" class="bottom-grid"><i class="fa fa-user" aria-hidden="true"></i></router-link>
+            </div>
+            <router-link to="/player" tag="div" class="player-mini active" ><i class="fa fa-music" aria-hidden="true"></i></router-link>
+      
+          <!-- 路由出口 -->
+          <!-- 路由匹配到的组件将渲染在这里 -->
+          <transition name="slide-fade">
+              <router-view></router-view>
+            </transition>
         </div>
         <script src="https://cdn.bootcss.com/socket.io/1.7.3/socket.io.min.js"></script>
     </body>

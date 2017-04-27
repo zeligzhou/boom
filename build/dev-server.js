@@ -57,5 +57,5 @@ server.listen(8888, function (err) {
         return
     }
     console.log('Listening at http://localhost:8888')
-    opn("http://localhost:8888/app/index.html");
+    opn("http://localhost:8888/app/");
 })
